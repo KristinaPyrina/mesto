@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mesto</title>
+    <link rel="stylesheet" href="./vendor/normalize.css">
+    <link rel="stylesheet" href="./pages/index.css">
+</head>
+<body class="root">
+    <div class="page">
+
+        <section class="popup">
+            <div class="popup__container">
+                <div class="popup__content">
+                    <a href="#" class="popup__close"><img class="popup__link" src="./images/close_icon.svg" alt="Кнопка закрыть"></a>
+                    <h2 class="popup__title">Редактировать профиль</h2>
+                    <p class="popup__text"><input class="popup__name" type="text" name="name" value=""></p>
+                    <p class="popup__text"><input class="popup__myself" type="text" name="myself" value=""></p>
+                    <button class="popup__button">Сохранить</button>
+                </div>
+            </div>
+        </section>
+
+        <header class="header">
+            <img class="header__logo" src="images/logo.svg" alt="Логотип">
+            <img class="header__line" src="images/line.jpg" alt="Линия">
+        </header>
+
+        <main class="main">
+            <section class="profile">
+                <img class="profile__avatar" src="images/avatar.jpg" alt="Аватар">
+                <div class="profile__info">
+                    <div class="profile__desc">
+                        <h1 class="profile__title">Жак-Ив Кусто</h1>
+                        <a class="profile__open" href="#"><img class="profile__edit" src="./images/edit_button.svg" alt="Редактировать"></a>
+                    </div>
+                    <p class="profile__subtitle">Исследователь океана</p>
+                </div>
+                    <a class="profile__button" href="#"><img class="profile__add" src="./images/vector.svg" alt="Добавить"></a>
+            </section>
+
+            <section class="elements">
+                <ul class="elements__content">
+                    <li>
+                        <img class="elements__image" src="./images/picture_1.jpg" alt="Карачаевск">
+                        <div class="elements__section">
+                            <p class="elements__text">Карачаевск</p>
+                            <a class="elements__vector" href="#"><img src="images/vector-like.svg" alt="Лайк"></a>
+                        </div>
+                    </li>
+                    <li>
+                        <img class="elements__image" src="./images/picture_2.jpg" alt="Гора Эльбрус">
+                        <div class="elements__section">
+                            <p class="elements__text">Гора Эльбрус</p>
+                            <a class="elements__vector" href="#"><img src="images/vector-like.svg" alt="Лайк"></a>
+                        </div>
+                    </li>
+                    <li>
+                        <img class="elements__image" src="./images/picture_3.jpg" alt="Домбай">
+                        <div class="elements__section">
+                            <p class="elements__text">Домбай</p>
+                            <a class="elements__vector" href="#"><img src="images/vector-like.svg" alt="Лайк"></a>
+                        </div>
+                    </li>
+                    <li>
+                        <img class="elements__image" src="./images/picture_4.jpg" alt="Гора Эльбрус">
+                        <div class="elements__section">
+                            <p class="elements__text">Гора Эльбрус</p>
+                            <a class="elements__vector" href="#"><img src="images/vector-like.svg" alt="Лайк"></a>
+                        </div>
+                    </li>
+                    <li>
+                        <img class="elements__image" src="./images/picture_5.jpg" alt="Домбай">
+                        <div class="elements__section">
+                            <p class="elements__text">Домбай</p>
+                            <a class="elements__vector" href="#"><img src="images/vector-like.svg" alt="Лайк"></a>
+                        </div>
+                    </li>
+                    <li>
+                        <img class="elements__image" src="./images/picture_6.jpg" alt="Карачаевск">
+                        <div class="elements__section">
+                            <p class="elements__text">Карачаево-Черкессия</p>
+                            <a class="elements__vector" href="#"><img src="images/vector-like.svg" alt="Лайк"></a>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p class="footer__copyright">© 2020 Mesto Russia</p>
+        </footer>
+
+    </div>
+    <script src="./index.js"></script>
+</body>
+</html>
+
+

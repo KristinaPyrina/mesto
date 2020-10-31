@@ -1,0 +1,13 @@
+.profile__desc {
+    display: flex;
+    margin-bottom: 16px;
+    height: 43px;
+}
+
+@media screen and (max-width: 320px) {
+    .profile__desc {
+        display: flex;
+        height: 38px;
+        margin-bottom: 14px;
+    }
+}
