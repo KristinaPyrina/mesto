@@ -1,5 +1,5 @@
 @import url("../vendor/normalize.css");
-@import url("../fonts/fonts.css");
+@import url("../fonts/fonts/fonts.css");
 @import url("../blocks/root/root.css");
 @import url("../blocks/page/page.css");
 @import url("../blocks/popup/popup.css");
@@ -25,7 +25,6 @@
 @import url("../blocks/profile/__edit/profile__edit.css");
 @import url("../blocks/profile/__subtitle/profile__subtitle.css");
 @import url("../blocks/profile/__button/profile__button.css");
-@import url("../blocks/profile/__add/profile__add.css");
 @import url("../blocks/elements/elements.css");
 @import url("../blocks/elements/__content/elements__content.css");
 @import url("../blocks/elements/__image/elements__image.css");

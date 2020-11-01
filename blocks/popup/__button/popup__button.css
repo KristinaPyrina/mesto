@@ -19,6 +19,24 @@
     transition: all 0.3s;
 }
 
+.popup__button:active {
+    outline: none;
+}
+
+.popup__button:focus {
+    outline: none;
+}
+
+@media screen and (max-width: 750px) {
+    .popup__button {
+        width: 238px;
+        height: 46px;
+        margin: 0 22px 25px 22px;
+        font-size: 14px;
+        line-height: 17px;
+    }
+}
+
 @media screen and (max-width: 320px) {
     .popup__button {
         width: 238px;
