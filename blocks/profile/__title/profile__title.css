@@ -1,10 +1,19 @@
 .profile__title {
     margin: 0;
-    height: 43px;
+    min-height: 43px;
     font-family: 'Inter-Medium', Arial, sans-serif;
     font-weight: 500;
     font-size: 42px;
     line-height: 56px;
+}
+
+@media screen and (max-width: 750px) {
+    .profile__title {
+        font-size: 27px;
+        line-height: 56px;
+        text-align: center;
+        margin-bottom: 0;
+    }
 }
 
 @media screen and (max-width: 320px) {

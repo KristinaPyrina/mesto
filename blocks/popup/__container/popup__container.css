@@ -8,6 +8,12 @@
     padding-top: 188px;
 }
 
+@media screen and (max-width: 750px) {
+    .popup__container {
+        padding-top: 123px;
+    }
+}
+
 @media screen and (max-width: 320px) {
     .popup__container {
         padding-top: 123px;

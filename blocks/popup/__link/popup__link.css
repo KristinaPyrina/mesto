@@ -1,3 +1,10 @@
+@media screen and (max-width: 750px) {
+    .popup__link {
+        height: 40px;
+        width: 40px;
+    }
+}
+
 @media screen and (max-width: 320px) {
     .popup__link {
         height: 40px;

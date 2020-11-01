@@ -1,6 +1,6 @@
 .popup__myself {
     width: 358px;
-    height: 27.34px;
+    min-height: 27.34px;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
     margin: 0 0 48px 0;
@@ -14,10 +14,18 @@
     color: #000000;
 }
 
+@media screen and (max-width: 750px) {
+    .popup__myself {
+        width: 238px;
+        min-height: 27px;
+        margin: 0 22px 45px 22px;
+    }
+}
+
 @media screen and (max-width: 320px) {
     .popup__myself {
         width: 238px;
-        height: 27px;
+        min-height: 27px;
         margin: 0 22px 45px 22px;
     }
 }

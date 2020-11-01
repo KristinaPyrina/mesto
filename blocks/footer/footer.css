@@ -3,6 +3,12 @@
     margin: 0 auto;
 }
 
+@media screen and (max-width: 990px) {
+    .footer {
+        width: calc(100% - 35px * 2);
+    }
+}
+
 @media screen and (max-width: 320px) {
     .footer {
         width: calc(100% - 19px * 2);

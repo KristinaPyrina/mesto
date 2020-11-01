@@ -5,13 +5,13 @@
     line-height: 22px;
     color: #545454;
     margin: 0 0 60px 0;
-    height: 18px;
+    max-height: 18px;
 }
 
 @media screen and (max-width: 320px) {
     .footer__copyright {
         margin: 0 0 36px 0;
-        height: 14px;
+        max-height: 14px;
         font-size: 14px;
         line-height: 17px;
     }

@@ -1,6 +1,6 @@
 .elements__text {
     width: 190px;
-    height: 23px;
+    min-height: 23px;
     color: #000000;
     font-family: 'Inter-Black',  Arial, sans-serif;
     font-weight: 900;
