@@ -1,19 +1,16 @@
 .profile__info {
     margin-top: 18px;
-    min-height: 77px;
 }
 
 @media screen and (max-width: 750px) {
     .profile__info {
         margin: 0 0 36px 0;
-        min-height: 77px;
     }
 }
 
 @media screen and (max-width: 320px) {
     .profile__info {
         margin: 0 0 36px 0;
-        min-height: 77px;
     }
 }
 

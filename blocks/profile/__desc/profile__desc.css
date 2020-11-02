@@ -1,13 +1,9 @@
 .profile__desc {
     display: flex;
-    margin-bottom: 16px;
-    max-height: 43px;
 }
 
 @media screen and (max-width: 320px) {
     .profile__desc {
         display: flex;
-        max-height: 38px;
-        margin-bottom: 14px;
     }
 }
