@@ -6,7 +6,6 @@
 }
 
 .profile__button:hover {
-    border: none;
     opacity: 0.6;
     transition: all .3s;
     cursor: pointer;
@@ -27,16 +26,7 @@
         align-items: center;
         background: transparent url("../../../images/add_button_320.svg") no-repeat;
         margin: 0;
-        height: 50px;
         width: 282px;
-    }
-}
-
-@media screen and (max-width: 320px) {
-    .profile__button {
-        background: transparent url("../../../images/add_button_320.svg") no-repeat;
-        margin: 0;
-        width: 100%;
     }
 }
 

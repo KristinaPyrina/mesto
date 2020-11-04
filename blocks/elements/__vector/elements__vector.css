@@ -1,5 +1,23 @@
 .elements__vector {
-    padding-top: 25px;
-    padding-right: 18px;
-    padding-bottom: 31px;
+    display: flex;
+    width: 21px;
+    height: 18px;
+    background: transparent url("../../../images/vector-like.svg") no-repeat;
+    border: none;
+    margin-top: 31px;
+    margin-right: 18px;
+}
+
+.elements__vector:hover {
+    opacity: 0.6;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.elements__vector:active {
+    outline: none;
+}
+
+.elements__vector:focus {
+    outline: none;
 }

@@ -1,7 +1,15 @@
 .popup__close {
+    width: 55px;
+    height: 55px;
+    background: transparent url('../../../images/close_icon.svg') center no-repeat;
+    background-size: 55px 55px;
+    border: none;
     position: absolute;
-    top: -45px;
-    left: 420px;
+    top: -44px;
+    right: -44px;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
 }
 
 .popup__close:hover {
@@ -10,18 +18,24 @@
     transition: all 0.3s;
 }
 
+.popup__close:active {
+    outline: none;
+}
+
+.popup__close:focus {
+    outline: none;
+}
+
 @media screen and (max-width: 750px) {
     .popup__close {
-        position: absolute;
+        width: 35px;
+        height: 35px;
+        background-size: 35px 35px;
         top: -50px;
-        left: 243px;
+        right: -2px;
     }
 }
 
-@media screen and (max-width: 320px) {
-    .popup__close {
-        position: absolute;
-        top: -50px;
-        left: 243px;
-    }
-}
+
+
+

@@ -6,27 +6,13 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Mesto</title>
-    <link rel="stylesheet" href="./vendor/normalize.css">
     <link rel="stylesheet" href="./pages/index.css">
 </head>
 <body class="root">
     <div class="page">
 
-        <section class="popup">
-            <div class="popup__container">
-                <div class="popup__content">
-                    <a href="#" class="popup__close"><img class="popup__link" src="./images/close_icon.svg" alt="Кнопка закрыть"></a>
-                    <h2 class="popup__title">Редактировать профиль</h2>
-                    <p class="popup__text"><input class="popup__name" type="text" name="name" value=""></p>
-                    <p class="popup__text"><input class="popup__myself" type="text" name="myself" value=""></p>
-                    <button class="popup__button">Сохранить</button>
-                </div>
-            </div>
-        </section>
-
         <header class="header">
             <img class="header__logo" src="images/logo.svg" alt="Логотип">
-            <img class="header__line" src="images/line.jpg" alt="Линия">
         </header>
 
         <main class="main">
@@ -35,11 +21,11 @@
                 <div class="profile__info">
                     <div class="profile__desc">
                         <h1 class="profile__title">Жак-Ив Кусто</h1>
-                        <a class="profile__open" href="#"><img class="profile__edit" src="./images/edit_button.svg" alt="Редактировать"></a>
+                        <button class="profile__open" type="button"></button>
                     </div>
                     <p class="profile__subtitle">Исследователь океана</p>
                 </div>
-                    <button class="profile__button" href="#"></button>
+                    <button class="profile__button" type="button"></button>
             </section>
 
             <section class="elements">
@@ -47,43 +33,43 @@
                     <li>
                         <img class="elements__image" src="./images/picture_1.jpg" alt="Карачаевск">
                         <div class="elements__section">
-                            <p class="elements__text">Карачаевск</p>
-                            <a class="elements__vector" href="#"><img src="images/vector-like.svg" alt="Лайк"></a>
+                            <h2 class="elements__text">Карачаевск</h2>
+                            <button class="elements__vector" type="button"></button>
                         </div>
                     </li>
                     <li>
                         <img class="elements__image" src="./images/picture_2.jpg" alt="Гора Эльбрус">
                         <div class="elements__section">
-                            <p class="elements__text">Гора Эльбрус</p>
-                            <a class="elements__vector" href="#"><img src="images/vector-like.svg" alt="Лайк"></a>
+                            <h2 class="elements__text">Гора Эльбрус</h2>
+                            <button class="elements__vector" type="button"></button>
                         </div>
                     </li>
                     <li>
                         <img class="elements__image" src="./images/picture_3.jpg" alt="Домбай">
                         <div class="elements__section">
-                            <p class="elements__text">Домбай</p>
-                            <a class="elements__vector" href="#"><img src="images/vector-like.svg" alt="Лайк"></a>
+                            <h2 class="elements__text">Домбай</h2>
+                            <button class="elements__vector" type="button"></button>
                         </div>
                     </li>
                     <li>
                         <img class="elements__image" src="./images/picture_4.jpg" alt="Гора Эльбрус">
                         <div class="elements__section">
-                            <p class="elements__text">Гора Эльбрус</p>
-                            <a class="elements__vector" href="#"><img src="images/vector-like.svg" alt="Лайк"></a>
+                            <h2 class="elements__text">Гора Эльбрус</h2>
+                            <button class="elements__vector" type="button"></button>
                         </div>
                     </li>
                     <li>
                         <img class="elements__image" src="./images/picture_5.jpg" alt="Домбай">
                         <div class="elements__section">
-                            <p class="elements__text">Домбай</p>
-                            <a class="elements__vector" href="#"><img src="images/vector-like.svg" alt="Лайк"></a>
+                            <h2 class="elements__text">Домбай</h2>
+                            <button class="elements__vector" type="button"></button>
                         </div>
                     </li>
                     <li>
                         <img class="elements__image" src="./images/picture_6.jpg" alt="Карачаевск">
                         <div class="elements__section">
-                            <p class="elements__text">Карачаево-Черкессия</p>
-                            <a class="elements__vector" href="#"><img src="images/vector-like.svg" alt="Лайк"></a>
+                            <h2 class="elements__text">Карачаево-Черкессия</h2>
+                            <button class="elements__vector" type="button"></button>
                         </div>
                     </li>
                 </ul>
@@ -91,12 +77,25 @@
         </main>
 
         <footer class="footer">
-            <p class="footer__copyright">© 2020 Mesto Russia</p>
+            <p class="footer__copyright">&copy 2020 Mesto Russia</p>
         </footer>
 
+        <section class="popup">
+            <div class="popup__container">
+                <button class="popup__close" type="button"></button>
+                <h3 class="popup__title">Редактировать профиль</h3>
+                <form class="popup__form">
+                    <input class="popup__input popup__input_type_name" type="text" name="name" value="" required>
+                    <input class="popup__input popup__input_type_myself" type="text" name="myself" value="" required>
+                    <button class="popup__button" type="submit">Сохранить</button>
+                </form>
+            </div>
+        </section>
+
     </div>
-    <script src="./index.js"></script>
+    <script src="scripts/index.js"></script>
 </body>
 </html>
+
 
 

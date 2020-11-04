@@ -1,0 +1,37 @@
+.profile__open {
+    width: 24px;
+    height: 24px;
+    background: transparent url("../../../images/edit_button.svg") no-repeat;
+    border: none;
+    background-size: 24px 24px;
+    margin-top: 19px;
+    margin-left: 17px;
+}
+
+.profile__open:hover {
+    opacity: 0.6;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.profile__open:active {
+    outline: none;
+}
+
+.profile__open:focus {
+    outline: none;
+}
+
+@media screen and (max-width: 320px) {
+    .profile__open {
+        width: 18px;
+        height: 18px;
+        background: transparent url("../../../images/edit_button_2.svg") no-repeat;
+        background-size: 18px 18px;
+        margin-top: 20px;
+        margin-left: 12px;
+    }
+}
+
+
+
