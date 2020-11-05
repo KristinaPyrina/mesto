@@ -12,7 +12,6 @@
         popupName.value = profileTitle.textContent;
         popupMyself.value = profileSubtitle.textContent;
         popup.classList.add('popup_opened');
-        popup.removeEventListener('click', showPopup);
     }
 
     // функция закрывает попап
