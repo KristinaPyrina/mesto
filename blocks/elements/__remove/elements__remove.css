@@ -1,0 +1,25 @@
+.elements__remove {
+    display: flex;
+    background: transparent url("../../../images/trash_1.svg");
+    background-size: 18px 20px;
+    width: 18px;
+    height: 20px;
+    border: none;
+    position: absolute;
+    top: 18px;
+    left: 249px;
+}
+
+.elements__remove:hover {
+    opacity: 0.7;
+    transition: all .3s;
+    cursor: pointer;
+}
+
+.elements__remove:active {
+    outline: none;
+}
+
+.elements__remove:focus {
+    outline: none;
+}

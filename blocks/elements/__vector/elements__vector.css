@@ -21,3 +21,8 @@
 .elements__vector:focus {
     outline: none;
 }
+
+.elements__vector_active {
+    background: transparent url("../../../images/vector_active.svg") no-repeat;
+    transition: all .3s;
+}

@@ -1,0 +1,10 @@
+@media screen and (max-width: 750px) {
+    .popup__input_add_button {
+        width: 200px;
+        margin: 0 0 20px 0;
+    }
+
+    .popup__input_add_button:last-of-type {
+        margin: 0;
+    }
+}
