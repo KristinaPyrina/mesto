@@ -43,9 +43,11 @@
             <div class="popup__container">
                 <button class="popup__close" type="button"></button>
                 <h3 class="popup__title">Редактировать профиль</h3>
-                <form class="popup__form" name="send">
-                    <input class="popup__input popup__input_type_name" type="text" name="name" value="" required>
-                    <input class="popup__input popup__input_type_myself" type="text" name="myself" value="" required>
+                <form class="popup__form" name="send" novalidate>
+                    <input class="popup__input popup__input_type_name" type="text" name="name" value="" required minlength="2" maxlength="40" autocomplete="off" id="name-card">
+                    <span id="name-card-error" class="error"></span>
+                    <input class="popup__input popup__input_type_myself" type="text" name="myself" value="" required minlength="2" maxlength="200" autocomplete="off" id="myself">
+                    <span id="myself-error" class="error"></span>
                     <button class="popup__button" type="submit">Сохранить</button>
                 </form>
             </div>
@@ -55,9 +57,11 @@
             <div class="popup__container popup__container_add_button">
                 <button class="popup__close popup__close_add_button" type="button"></button>
                 <h3 class="popup__title popup__title_add_button">Новое место</h3>
-                <form class="popup__form popup__form_add_button" name="send">
-                    <input class="popup__input popup__input_add_button popup__input_type_edit" type="text" name="edit" value="" placeholder="Название" required>
-                    <input class="popup__input popup__input_add_button popup__input_type_image" type="text" name="image" value="" placeholder="Ссылка на картинку" required>
+                <form class="popup__form popup__form_add_button" name="send" novalidate>
+                    <input class="popup__input popup__input_add_button popup__input_type_edit" type="text" name="edit" value="" placeholder="Название" required minlength="2" maxlength="30" autocomplete="off" id="edit">
+                    <span id="edit-error" class="error"></span>
+                    <input class="popup__input popup__input_add_button popup__input_type_image" type="url" name="image" value="" placeholder="Ссылка на картинку" required autocomplete="off" id="image">
+                    <span id="image-error" class="error"></span>
                     <button class="popup__button popup__button_add_button" type="submit">Создать</button>
                 </form>
             </div>
@@ -85,6 +89,7 @@
         </template>
 
     </div>
+    <script src="scripts/validate/validate.js"></script>
     <script src="scripts/index.js"></script>
 </body>
 </html>

@@ -42,6 +42,7 @@ const initialCards = [
         link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
     }
 ];
+
     function showPopupPhoto(image, text) {
         popupPhoto.querySelector('.popup__picture_type_photo').src = image.src;
         popupPhoto.querySelector('.popup__picture_type_photo').alt = image.alt;
@@ -57,6 +58,7 @@ const initialCards = [
     function showPopup() {
         popupName.value = profileTitle.textContent;
         popupMyself.value = profileSubtitle.textContent;
+        enableValidation(validationConfig);
         popup.classList.add('popup_opened');
     }
 
@@ -69,6 +71,7 @@ const initialCards = [
     function showPopupAdd() {
         formAdd.querySelector('.popup__input_type_edit').value = '';
         formAdd.querySelector('.popup__input_type_image').value = '';
+        enableValidation(validationConfig);
         popupAdd.classList.add('popup_opened');
     }
 
@@ -128,6 +131,35 @@ const initialCards = [
     profileButton.addEventListener('click', showPopupAdd);
     addClose.addEventListener('click', closePopupAdd);
     photoClose.addEventListener('click', closePopupPhoto);
+
+    document.addEventListener('keydown', function (evt) {
+        if (evt.key === 'Escape') {
+            closePopup();
+            closePopupAdd();
+            closePopupPhoto();
+        }
+    });
+
+    popup.addEventListener('click', function (evt) {
+        const currentElement = evt.target;
+        if (currentElement.parentNode.className === 'page') {
+            closePopup();
+        }
+    });
+
+    popupAdd.addEventListener('click', function (evt) {
+        const currentElement = evt.target;
+        if (currentElement.parentNode.className === 'page') {
+            closePopupAdd();
+        }
+    });
+
+    popupPhoto.addEventListener('click', function (evt) {
+        const currentElement = evt.target;
+        if (currentElement.parentNode.className === 'page') {
+            closePopupPhoto();
+        }
+    });
 
     //рендерим (заполняем) страницу
     initialCards.forEach((elem) => {
