@@ -1,0 +1,14 @@
+.popup__button_invalid {
+    background-color: #FFFFFF;
+    border-radius: 2px;
+    color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.popup__button_invalid:hover {
+    background-color: #FFFFFF;
+    border-radius: 2px;
+    color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
