@@ -53,16 +53,16 @@
             </div>
         </section>
 
-        <section class="popup popup_add_button">
-            <div class="popup__container popup__container_add_button">
-                <button class="popup__close popup__close_add_button" type="button"></button>
-                <h3 class="popup__title popup__title_add_button">Новое место</h3>
-                <form class="popup__form popup__form_add_button" name="send" novalidate>
-                    <input class="popup__input popup__input_add_button popup__input_type_edit" type="text" name="edit" value="" placeholder="Название" required minlength="2" maxlength="30" autocomplete="off" id="edit">
+        <section class="popup popup_type_add">
+            <div class="popup__container popup__container_type_add">
+                <button class="popup__close popup__close_type_add" type="button"></button>
+                <h3 class="popup__title popup__title_type_add">Новое место</h3>
+                <form class="popup__form popup__form_type_add" name="send" novalidate>
+                    <input class="popup__input popup__input_type_add popup__input_type_edit" type="text" name="edit" value="" placeholder="Название" required minlength="2" maxlength="30" autocomplete="off" id="edit">
                     <span id="edit-error" class="error"></span>
-                    <input class="popup__input popup__input_add_button popup__input_type_image" type="url" name="image" value="" placeholder="Ссылка на картинку" required autocomplete="off" id="image">
+                    <input class="popup__input popup__input_type_add popup__input_type_image" type="url" name="image" value="" placeholder="Ссылка на картинку" required autocomplete="off" id="image">
                     <span id="image-error" class="error"></span>
-                    <button class="popup__button popup__button_add_button" type="submit">Создать</button>
+                    <button class="popup__button popup__button_type_add" type="submit">Создать</button>
                 </form>
             </div>
         </section>
@@ -89,8 +89,8 @@
         </template>
 
     </div>
-    <script src="scripts/validate/validate.js"></script>
     <script src="scripts/index.js"></script>
+    <script src="scripts/validate/validate.js"></script>
 </body>
 </html>
 

@@ -54,6 +54,7 @@ function enableValidation(config) {
     });
 }
 
+
 const validationConfig = {
     formSelector: '.popup__form',
     inputSelector: '.popup__input',
@@ -62,5 +63,11 @@ const validationConfig = {
     inputErrorClass: 'popup__input_state_invalid'
 };
 
+function checkActiveButton(form) {
+    const submitButton = form.querySelector(validationConfig.submitButtonSelector);
+    setButtonState(submitButton, form.checkValidity(), validationConfig);
+}
+
+enableValidation(validationConfig);
 
 
