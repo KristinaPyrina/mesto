@@ -17,6 +17,7 @@ const popupAddImage = formAdd.querySelector('.popup__input_type_image');
 const popupPhoto = document.querySelector('.popup_type_photo');
 const photoPopupImage = popupPhoto.querySelector('.popup__picture_type_photo');
 const photoPopupTitle = popupPhoto.querySelector('.popup__text');
+const popups = document.querySelectorAll('.popup');
 
 const initialCards = [
     {
@@ -140,10 +141,7 @@ const initialCards = [
     profileForm.addEventListener('submit', submitProfileForm);
     formAdd.addEventListener('submit', submitFormAdd);
     profileOpenButton.addEventListener('click', showProfilePopup);
-    profilePopupCloseButton.addEventListener('click', closeProfilePopup);
     profileButton.addEventListener('click', showPopupAdd);
-    addClose.addEventListener('click', closePopupAdd);
-    photoClose.addEventListener('click', closePopupPhoto);
 
     function closeByEscape(evt) {
         if (evt.key === 'Escape') {
@@ -151,8 +149,6 @@ const initialCards = [
             closePopup(openedPopup);
         }
     }
-
-    const popups = document.querySelectorAll('.popup');
 
     popups.forEach((popup) => {
         popup.addEventListener('click', (evt) => {
