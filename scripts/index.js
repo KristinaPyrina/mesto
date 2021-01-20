@@ -1,9 +1,9 @@
+import { Card } from './card.js';
+import { ValidationConfig, FormValidator} from './FormValidator.js';
+
 const profilePopup = document.querySelector('.popup_type_edit');
 const popupAdd = document.querySelector('.popup_type_add');
 const profileOpenButton = document.querySelector('.profile__open');
-const profilePopupCloseButton = profilePopup.querySelector('.popup__close');
-const addClose = document.querySelector('.popup__close_type_add');
-const photoClose = document.querySelector('.popup__close_type_photo');
 const profileTitle = document.querySelector('.profile__title');
 const profileSubtitle = document.querySelector('.profile__subtitle');
 const popupName = document.querySelector('.popup__input_type_name');
@@ -14,9 +14,6 @@ const elementContent = document.querySelector('.elements__content');
 const formAdd  = document.querySelector('.popup__form_type_add');
 const popupAddEdit = formAdd.querySelector('.popup__input_type_edit');
 const popupAddImage = formAdd.querySelector('.popup__input_type_image');
-const popupPhoto = document.querySelector('.popup_type_photo');
-const photoPopupImage = popupPhoto.querySelector('.popup__picture_type_photo');
-const photoPopupTitle = popupPhoto.querySelector('.popup__text');
 const popups = document.querySelectorAll('.popup');
 
 const initialCards = [
@@ -56,34 +53,20 @@ const initialCards = [
         document.removeEventListener('keydown', closeByEscape);
     }
 
-    function showPopupPhoto(image, text) {
-        photoPopupImage.src = image.src;
-        photoPopupImage.alt = image.alt;
-        photoPopupTitle.textContent = text.textContent;
-        openPopup(popupPhoto);
-    }
-
-    function closePopupPhoto() {
-        closePopup(popupPhoto);
-    }
-
     // функция открывает попап
     function showProfilePopup() {
         popupName.value = profileTitle.textContent;
         popupMyself.value = profileSubtitle.textContent;
-        checkActiveButton(profileForm);
+        const popupProfileFormValid = new FormValidator(ValidationConfig, profileForm);
+        popupProfileFormValid.enableValidation();
         openPopup(profilePopup);
-        }
-
-    // функция закрывает попап
-    function closeProfilePopup() {
-        closePopup(profilePopup);
     }
 
     //открывает
     function showPopupAdd() {
         formAdd.reset();
-        checkActiveButton(formAdd);
+        const popupAddFormValid = new FormValidator(ValidationConfig, formAdd);
+        popupAddFormValid.enableValidation();
         openPopup(popupAdd);
     }
 
@@ -103,38 +86,10 @@ const initialCards = [
         event.preventDefault();
         const name = popupAddEdit.value;
         const link = popupAddImage.value;
-        const card = addCard(name, link);
-        elementContent.prepend(card);
+        const card = new Card(link, name);
+        const cardElement = card.generateCard();
+        elementContent.prepend(cardElement);
         closePopupAdd();
-    }
-
-    function addCard(name, link) {
-        const elementsTemplate = document.querySelector('.elements-template').content;
-        const placeElement = elementsTemplate.cloneNode(true);
-        const cardImage = placeElement.querySelector('.elements__image');
-        cardImage.src = link;
-        cardImage.alt = name;
-        placeElement.querySelector('.elements__text').textContent = name;
-
-        placeElement.querySelector('.elements__vector').addEventListener('click',event => {
-            const eventActive = event.target;
-            eventActive.classList.toggle('elements__vector_active');
-        });
-
-        placeElement.querySelector('.elements__remove').addEventListener('click',event => {
-            const removeBlock = event.target;
-            const elementsRemove = removeBlock.closest('.elements__container');
-            elementsRemove.remove();
-        });
-
-        cardImage.addEventListener('click',event => {
-            const elementsImage = event.target;
-            const elementsOpen = elementsImage.closest('.elements__container');
-            const elementText = elementsOpen.querySelector('.elements__text');
-            showPopupPhoto(elementsImage, elementText);
-        });
-
-        return placeElement
     }
 
     // вешаем прослушиватели событий
@@ -162,10 +117,11 @@ const initialCards = [
     });
 
     //рендерим (заполняем) страницу
-    initialCards.forEach((elem) => {
-        const card = addCard(elem.name, elem.link);
-        elementContent.prepend(card);
+    initialCards.forEach((element) => {
+        const card = new Card(element.link, element.name);
+
+        const cardElement = card.generateCard();
+
+        document.querySelector('.elements__content').prepend(cardElement);
     });
-
-
 
