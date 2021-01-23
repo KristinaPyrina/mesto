@@ -100,9 +100,8 @@ const initialCards = [
         event.preventDefault();
         const name = popupAddEdit.value;
         const link = popupAddImage.value;
-        const card = new Card(link, name);
-        const cardElement = card.generateCard();
-        elementContent.prepend(cardElement);
+        const card = createCard({name: name, link: link});
+        elementContent.prepend(card);
         closePopupAdd();
     }
 
