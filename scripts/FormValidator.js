@@ -1,4 +1,4 @@
-export const ValidationConfig = {
+export const validationConfig = {
     inputSelector: '.popup__input',
     submitButtonSelector: '.popup__button',
     inactiveButtonClass: 'popup__button_invalid',
@@ -12,6 +12,8 @@ export class FormValidator {
         this._submitButtonSelector = config.submitButtonSelector;
         this._inactiveButtonClass = config.inactiveButtonClass;
         this._inputErrorClass = config.inputErrorClass;
+        this._inputList = this._form.querySelectorAll(this._inputSelector);
+        this._submitButton = this._form.querySelector(this._submitButtonSelector);
     }
 
     _showError(form, input) {
@@ -45,13 +47,10 @@ export class FormValidator {
     }
 
     _setEventListener(form) {
-        const inputList = form.querySelectorAll(this._inputSelector);
-        const submitButton = form.querySelector(this._submitButtonSelector);
-
-        inputList.forEach(input => {
+        this._inputList.forEach(input => {
             input.addEventListener('input', (evt) => {
                 this._checkInputValidity(form, input);
-                this._setButtonState(form.checkValidity(), submitButton);
+                this._setButtonState(form.checkValidity(), this._submitButton );
             });
         });
     }
@@ -62,9 +61,16 @@ export class FormValidator {
             this._form.addEventListener('submit', (evt) => {
                 evt.preventDefault();
             });
+    }
 
-            const submitButton = this._form.querySelector(this._submitButtonSelector);
-            this._setButtonState(this._form.checkValidity(), submitButton);
+    resetValidation() {
+        this._inputList.forEach(input => {
+                this._checkInputValidity(this._form, input);
+            });
+    }
+
+    checkButtonState() {
+        this._setButtonState(this._form.checkValidity(), this._submitButton );
     }
 }
 

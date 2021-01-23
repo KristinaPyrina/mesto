@@ -1,24 +1,19 @@
-import { popupPhoto } from './popupPhoto.js';
-
 export class Card {
-    constructor(link, name) {
-        this._link = link;
-        this._name = name;
+    constructor(data, cardSelector, showPopupPhoto) {
+        this._link = data.link;
+        this._name = data.name;
+        this._cardSelector = cardSelector;
+        this._showPopupPhoto = showPopupPhoto;
     }
 
     _getTemplate() {
-        const cardElement = document
-            .querySelector('.elements-template')
-            .content
-            .cloneNode(true);
+        const cardElement = this._cardSelector.content.cloneNode(true);
 
         return cardElement;
     }
 
     _handleOpenPopup() {
-        const popupPhotoTmp = new popupPhoto(this._link, this._name);
-
-        popupPhotoTmp.generatePopup();
+        this._showPopupPhoto(this._link, this._name);
     }
 
     _like(elem) {
@@ -39,17 +34,20 @@ export class Card {
             this._remove(event.target);
         });
 
-        this._element.querySelector('.elements__image').addEventListener('click', () => {
+        this._imageSelector.addEventListener('click', () => {
             this._handleOpenPopup();
         })
     }
 
     generateCard() {
         this._element = this._getTemplate();
+        this._imageSelector = this._element.querySelector('.elements__image');
+        this._textSelector = this._element.querySelector('.elements__text');
         this._setEventListener();
 
-        this._element.querySelector('.elements__image').src = this._link;
-        this._element.querySelector('.elements__text').textContent = this._name;
+        this._imageSelector.src = this._link;
+        this._imageSelector.alt = this._name;
+        this._textSelector.textContent = this._name;
 
         return this._element;
     }
