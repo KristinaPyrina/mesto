@@ -34,20 +34,20 @@ export class Card {
             this._remove(event.target);
         });
 
-        this._imageSelector.addEventListener('click', () => {
+        this._image.addEventListener('click', () => {
             this._handleOpenPopup();
         })
     }
 
     generateCard() {
         this._element = this._getTemplate();
-        this._imageSelector = this._element.querySelector('.elements__image');
-        this._textSelector = this._element.querySelector('.elements__text');
+        this._image = this._element.querySelector('.elements__image');
+        this._text = this._element.querySelector('.elements__text');
         this._setEventListener();
 
-        this._imageSelector.src = this._link;
-        this._imageSelector.alt = this._name;
-        this._textSelector.textContent = this._name;
+        this._image.src = this._link;
+        this._image.alt = this._name;
+        this._text.textContent = this._name;
 
         return this._element;
     }
