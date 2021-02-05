@@ -1,7 +1,7 @@
 .profile__open {
     width: 24px;
     height: 24px;
-    background: transparent url("../../../images/edit_button.svg") no-repeat;
+    background: transparent url("../../../src/images/edit_button.svg") no-repeat;
     border: none;
     background-size: 24px 24px;
     margin-top: 19px;
@@ -26,7 +26,7 @@
     .profile__open {
         width: 18px;
         height: 18px;
-        background: transparent url("../../../images/edit_button_2.svg") no-repeat;
+        background: transparent url("../../../src/images/edit_button_2.svg") no-repeat;
         background-size: 18px 18px;
         margin-top: 20px;
         margin-left: 12px;

@@ -2,7 +2,7 @@
     display: flex;
     width: 21px;
     height: 18px;
-    background: transparent url("../../../images/vector-like.svg") no-repeat;
+    background: transparent url("../../../src/images/vector-like.svg") no-repeat;
     border: none;
     margin-top: 31px;
     margin-right: 18px;
@@ -23,6 +23,6 @@
 }
 
 .elements__vector_active {
-    background: transparent url("../../../images/vector_active.svg") no-repeat;
+    background: transparent url("../../../src/images/vector_active.svg") no-repeat;
     transition: all .3s;
 }

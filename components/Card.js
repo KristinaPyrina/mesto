@@ -1,19 +1,21 @@
+import { PopupWithImage } from './PopupWithImage.js';
+
 export class Card {
-    constructor(data, cardSelector, showPopupPhoto) {
+    constructor(data, cardSelector) {
         this._link = data.link;
         this._name = data.name;
         this._cardSelector = cardSelector;
-        this._showPopupPhoto = showPopupPhoto;
     }
 
     _getTemplate() {
         const cardElement = this._cardSelector.content.cloneNode(true);
-
         return cardElement;
     }
 
-    _handleOpenPopup() {
-        this._showPopupPhoto(this._link, this._name);
+    _handleCardClick() {
+        const popupOpen = new PopupWithImage(this._link, this._name, '.popup_type_photo');
+        popupOpen.setEventListeners();
+        popupOpen.open()
     }
 
     _like(elem) {
@@ -35,7 +37,7 @@ export class Card {
         });
 
         this._image.addEventListener('click', () => {
-            this._handleOpenPopup();
+            this._handleCardClick();
         })
     }
 
