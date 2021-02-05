@@ -1,8 +1,8 @@
-import { Card } from '../components/Card.js';
-import { validationConfig, FormValidator} from '../components/FormValidator.js';
-import Section from "../components/Section.js";
-import { UserInfo } from "../components/UserInfo.js";
-import { PopupWithForm } from "../components/PopupWithForm.js";
+import { Card } from './components/Card.js';
+import { validationConfig, FormValidator} from './components/FormValidator.js';
+import Section from "./components/Section.js";
+import { UserInfo } from "./components/UserInfo.js";
+import { PopupWithForm } from "./components/PopupWithForm.js";
 import './index.css';
 
 const profilePopup = document.querySelector('.popup_type_edit');
