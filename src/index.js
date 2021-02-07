@@ -1,8 +1,9 @@
 import { Card } from './components/Card.js';
-import { validationConfig, FormValidator} from './components/FormValidator.js';
+import { FormValidator} from './components/FormValidator.js';
 import Section from "./components/Section.js";
 import { UserInfo } from "./components/UserInfo.js";
 import { PopupWithForm } from "./components/PopupWithForm.js";
+import { PopupWithImage } from './components/PopupWithImage.js';
 import './index.css';
 
 const profilePopup = document.querySelector('.popup_type_edit');
@@ -18,6 +19,15 @@ const ivanovoImage = new URL('./images/picture_4.jpg', import.meta.url);
 const kamchatkaImage = new URL('./images/kamchatka.jpg', import.meta.url);
 const kholmogorskyImage = new URL('./images/kholmogorsky-rayon.jpg', import.meta.url);
 const baikalImage = new URL('./images/baikal.jpg', import.meta.url);
+const popupUserName = profilePopup.querySelector('.popup__input_type_name');
+const popupUserInfo = profilePopup.querySelector('.popup__input_type_myself');
+
+const validationConfig = {
+    inputSelector: '.popup__input',
+    submitButtonSelector: '.popup__button',
+    inactiveButtonClass: 'popup__button_invalid',
+    inputErrorClass: 'popup__input_state_invalid'
+};
 
 const initialCards = [
     {
@@ -54,7 +64,11 @@ const initialCards = [
     const sectionCards  = new Section({
         items: initialCards,
         renderer: (item) => {
-            const card = new Card(item, cardSelector);
+            const card = new Card( {opened: () => {
+                        const popupImage = new PopupWithImage('.popup_type_photo');
+                        popupImage.setEventListeners();
+                        popupImage.open(card._link, card._name)}},
+            item, cardSelector);
             const cardElement = card.generateCard();
             sectionCards.addItem(cardElement);
         }
@@ -72,7 +86,11 @@ const initialCards = [
     const popupAdd = new PopupWithForm(
     '.popup_type_add', {usage: (event) => {
             event.preventDefault();
-            const card = new Card(popupAdd._getInputValues(), cardSelector);
+            const card = new Card({opened: () => {
+                    const popupImage = new PopupWithImage('.popup_type_photo');
+                        popupImage.setEventListeners();
+                        popupImage.open(card._link, card._name)}},
+                popupAdd.getInputValues(), cardSelector);
             const cardElement = card.generateCard();
             sectionCards.addItem(cardElement);
         }});
@@ -81,7 +99,9 @@ const initialCards = [
     // функция открывает попап
     function showProfilePopup() {
         const userInfo = popupProfile.getUserInfo();
-        popupProfile.open(userInfo);
+        popupUserName.value = userInfo.name;
+        popupUserInfo.value = userInfo.info;
+        profilePopup.classList.add('popup_opened');
         popupProfileFormValid.resetValidation();
         popupProfileFormValid.checkButtonState();
     }
@@ -94,7 +114,7 @@ const initialCards = [
 
     function submitProfileForm(event) {
         event.preventDefault();
-        popupProfile.setUserInfo();
+        popupProfile.setUserInfo(popupUserName.value, popupUserInfo.value);
         popupProfile.close();
     }
 

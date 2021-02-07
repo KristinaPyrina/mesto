@@ -6,7 +6,7 @@ export class PopupWithForm extends Popup {
         this._usage = usage;
     }
 
-    _getInputValues() {
+    getInputValues() {
         const inputText = this.popup.querySelector('.popup__input_type_edit');
         const inputLink = this.popup.querySelector('.popup__input_type_image');
         const responseForm = {'name': inputText.value, 'link': inputLink.value};

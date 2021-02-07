@@ -1,10 +1,15 @@
-import { Popup } from "./Popup.js";
-
-export class UserInfo extends Popup{
+export class UserInfo{
     constructor( { nameSelector, infoSelector }, popupSelector) {
-        super(popupSelector);
+        this.popup = document.querySelector(popupSelector);
         this._name = document.querySelector(nameSelector);
         this._info = document.querySelector(infoSelector);
+    }
+
+    close(){
+        this.popup.classList.remove('popup_opened');
+        document.removeEventListener('keydown', (evt) => {
+            this._handleEscClose(evt);
+        });
     }
 
     getUserInfo(){
@@ -14,18 +19,32 @@ export class UserInfo extends Popup{
         return userInfo;
     }
 
-    open(userInfo) {
-        const popupName = this.popup.querySelector('.popup__input_type_name');
-        const popupInfo = this.popup.querySelector('.popup__input_type_myself');
-        popupName.value = userInfo.name;
-        popupInfo.value = userInfo.info;
-        super.open()
+
+    _handleEscClose(evt){
+        if (evt.key === 'Escape') {
+            this.close();
+        }
     }
 
-    setUserInfo() {
-        const popupName = this.popup.querySelector('.popup__input_type_name');
-        const popupInfo = this.popup.querySelector('.popup__input_type_myself');
-        this._name .textContent = popupName.value;
-        this._info.textContent = popupInfo.value;
+    setUserInfo(name, info) {
+        this._name .textContent = name;
+        this._info.textContent = info;
     }
+
+    setEventListeners() {
+        this.popup.querySelector('.popup__close').addEventListener('click', () => {
+            this.close();
+        });
+
+        document.addEventListener('keydown', (evt) => {
+            this._handleEscClose(evt);
+        });
+
+        this.popup.addEventListener('click', (evt) => {
+            if (evt.target.classList.contains('popup_opened')) {
+                this.close();
+            }
+        });
+    }
+
 }
